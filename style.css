@@ -1,0 +1,63 @@
+.button{
+    border-bottom: 4px solid lightcoral;
+    border-top: 4px solid lightskyblue;
+    border-right: 4px solid lightgreen;
+    border-left: 4px solid lightsalmon;
+    background-color: lightyellow;
+    height:50px;
+    width: 120px;
+}
+.nextButton{
+    border-bottom: 4px solid lightcoral;
+    border-top: 4px solid lightskyblue;
+    border-right: 4px solid lightgreen;
+    border-left: 4px solid lightsalmon;
+    background-color: lightyellow;
+    height:50px;
+    width: 120px;
+    visibility: hidden;
+}
+#buttonstyle1{
+    border-bottom: 4px solid lightcoral;
+    border-top: 4px solid lightcoral;
+    border-right: 4px solid lightcoral;
+    border-left: 4px solid lightcoral;
+    background-color: lightyellow;
+}
+#buttonstyle3{
+    border-bottom: 4px solid lightskyblue;
+    border-top: 4px solid lightskyblue;
+    border-right: 4px solid lightskyblue;
+    border-left: 4px solid lightskyblue;
+    background-color: lightyellow;
+}
+#buttonstyle2{
+    border-bottom: 4px solid lightgreen;
+    border-top: 4px solid lightgreen;
+    border-right: 4px solid lightgreen;
+    border-left: 4px solid lightgreen;
+    background-color: lightyellow;
+}
+#buttonstyle4{
+    border-bottom: 4px solid lightsalmon;
+    border-top: 4px solid lightsalmon;
+    border-right: 4px solid lightsalmon;
+    border-left: 4px solid lightsalmon;
+    background-color: lightyellow;
+}
+.timer{
+    position: absolute;
+    top:0;
+    right: 10px;
+    width: 100px;
+    text-align:right;
+}
+/* .timer{
+    position: absolute;
+    fla
+    text-align: right;
+    color: blue;
+}
+.hs {
+
+} */
