@@ -28,10 +28,38 @@ Questions = [
 
 
 seconds = 100;
+newseconds = 100;
+var timerLose = true;
+
+function checkQuestion() {
+
+    if (this.value === Questions[questionCount].A){
+        if (Questions.length > questionCount){
+            questionCount++;
+            console.log(questionCount)
+            startGame.style.visibility = "hidden";
+            buildQuiz();
+
+        }
+    }
+    else {
+        timerLose = false;
+        alert("wrong answer!");
+        }
+            
+
+        
+}
+
 function timer() {
     var timerInterval = setInterval(function(){
         seconds--;
-        timeLeft.textContent = "Time Left: " + seconds;
+        newseconds--;
+        if (timerLose === false){
+            var newseconds = seconds-20;
+            newseconds--;
+        }
+        timeLeft.textContent = "Time Left: " + newseconds;
     if (seconds === 0) {
         clearInterval(timerInterval);
         alert("Time's up!");
@@ -61,16 +89,5 @@ startGame.addEventListener("click",function() {
     buildQuiz();
     //questionCount++;
 })
-function checkQuestion() {
-    alert(this.value)
-    alert(Questions[questionCount].A)
-    if (this.value === Questions[questionCount].A){
-        if (Questions.length > questionCount)
-            questionCount++;
-            console.log(questionCount)
-            startGame.style.visibility = "hidden";
-            buildQuiz();
-    }
-        
-}
+
 
