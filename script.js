@@ -29,45 +29,54 @@ Questions = [
 
 seconds = 100;
 newseconds = 100;
-var timerLose = true;
+var timerLose = 1;
 
 function checkQuestion() {
 
     if (this.value === Questions[questionCount].A){
         if (Questions.length > questionCount){
+            
             questionCount++;
             console.log(questionCount)
             startGame.style.visibility = "hidden";
             buildQuiz();
-
         }
     }
     else {
-        timerLose = false;
+        lose = 1;
         alert("wrong answer!");
-        }
-            
-
-        
+        }     
 }
 
 function timer() {
     var timerInterval = setInterval(function(){
         seconds--;
         newseconds--;
-        if (timerLose === false){
-            var newseconds = seconds-20;
-            newseconds--;
-        }
         timeLeft.textContent = "Time Left: " + newseconds;
     if (seconds === 0) {
         clearInterval(timerInterval);
         alert("Time's up!");
     }
+    
+    loseTime();
+    
+    function loseTime(lose){
+        if (lose === 1){
+            console.log(newseconds)
+            newseconds = seconds-20;
+            lose = 0;
+            return newseconds;
+        }
+        else{
+            return newseconds;
+        }
+        
+    }
     },1000);
 }
 var questionCount = 0;
 function buildQuiz(){
+    if (questionCount < Questions.length){
     container.innerHTML = "";
     Question.textContent = Questions[questionCount].Q;
    // Options.textContent = Questions[questionCount].O;
@@ -78,8 +87,11 @@ function buildQuiz(){
         button.innerHTML = element;
         button.onclick = checkQuestion;
         container.appendChild(button);
- 
     });
+    }
+    else{
+        window.location.href = "hs.html";
+    }
 }
 
 startGame.addEventListener("click",function() {
