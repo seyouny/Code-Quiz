@@ -34,7 +34,7 @@ var score = 0;
 seconds = 30;
 newseconds = 30;
 
-
+lose = 0;
 function checkQuestion() {
 
     if (this.value === Questions[questionCount].A){
@@ -64,7 +64,7 @@ function timer() {
         highscore();
     }
     
-    loseTime();
+    loseTime(lose);
     
     function loseTime(lose){
         if (lose === 1){
