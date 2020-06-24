@@ -70,10 +70,10 @@ function timer() {
         else{
             return newseconds;
         }
-        
     }
     },1000);
 }
+
 var questionCount = 0;
 function buildQuiz(){
     if (questionCount < Questions.length){
@@ -90,8 +90,28 @@ function buildQuiz(){
     });
     }
     else{
-        window.location.href = "hs.html";
+        // window.location.href = "hs.html";
+        highscore();
     }
+}
+function highscore(){
+    container.innerHTML = '';
+    Question.textContent = "High Scores"
+    var input = document.createElement("input");
+    input.setAttribute("type","text");
+
+    container.appendChild(input);
+    // var inputName = container.value;
+    console.log(input.value);
+    console.log(input.container)
+
+
+    var hsButton = document.createElement("button");
+    hsButton.setAttribute("value","submit")
+    hsButton.addEventListener("click",function(){
+        localStorage.setItem("High Score",hsButton.value);
+    })
+    container.appendChild(hsButton);
 }
 
 startGame.addEventListener("click",function() {
@@ -99,6 +119,7 @@ startGame.addEventListener("click",function() {
     startGame.style.visibility = "hidden";
     clear.style.visibility = "hidden";
     buildQuiz();
+    
     //questionCount++;
 })
 
