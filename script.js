@@ -7,7 +7,9 @@ var Options = document.querySelector("#Options");
 var clear = document.querySelector("#Clear");
 var container = document.querySelector(".container");
 var form = document.querySelector("#form");
-
+var submit = document.querySelector("#sub");
+var Names = document.querySelector("#Names");
+var names = document.querySelector("#name");
 Questions = [
     {
     Q: "Which Minecraft pickaxe has the most uses?", 
@@ -27,7 +29,8 @@ Questions = [
     A:"Legolas"
     }]
 
-
+var nameList = [];
+var score = 0;
 seconds = 30;
 newseconds = 30;
 
@@ -40,6 +43,7 @@ function checkQuestion() {
             questionCount++;
             console.log(questionCount)
             startGame.style.visibility = "hidden";
+            score++;
             buildQuiz();
         }
     }
@@ -102,6 +106,22 @@ function highscore(){
     Question.textContent = "High Scores"
     container.innerHTML = '';
    form.style.visibility = "visible";
+    var strings = names.value + " With the highest score of: " + score;
+   submit.addEventListener("click",function(){
+    Names.textContent = strings;
+       Names.innerHTML(strings);
+    Names.append(strings);
+   })
+//    $("#sub").submit(function(){
+//        console.log($("#name").val());
+        // $("#Names").text($("#name").val());
+//    }
+//    <h3 style= "text-align: center;" id= "Names"></h3>
+
+//    <form id= "form"> 
+//         <input type="text" name="name" id="name"> 
+//         <br><input type="submit" value="Submit" id= "sub"> 
+//         </form>
    
     // container.innerHTML = '';
     // Question.textContent = "High Scores"
