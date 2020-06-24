@@ -94,23 +94,46 @@ function buildQuiz(){
         highscore();
     }
 }
+
+// First Name: <input type="text" id="myText" value=""></input>
+// <p id="Input"></p>
+// <button onclick="myFunction()">Try it</button>
+
+// <script>
+// function myFunction() {
+//   var x = document.getElementById("myText").value;
+//   document.getElementById("Input").innerHTML = x;
+
+
 function highscore(){
-    container.innerHTML = '';
+    // replaced Question with "high Scores"
     Question.textContent = "High Scores"
-    var input = document.createElement("input");
-    input.setAttribute("type","text");
-
-    container.appendChild(input);
-    // var inputName = container.value;
-    console.log(input.value);
-    console.log(input.container)
-
-
+   // "Created button element"
     var hsButton = document.createElement("button");
-    hsButton.setAttribute("value","submit")
+    // Made button say "Submit"
+    hsButton.textContent = "Submit";
+    //this will grab value from input and make into variable x
+    var x = document.getElementById("myText").value;
+    //this makes the x go inside somewhere. let's put it in the Clear Id
+    document.getElementById("Names").innerHTML = x;
+    
+    
+
     hsButton.addEventListener("click",function(){
-        localStorage.setItem("High Score",hsButton.value);
+
+        var nameIn = document.getElementById("myText").value;
+        document.getElementById("nameInput").innerHTML = nameIn;
     })
+    container.appendChild(hsButton);
+
+
+
+// *************************BUTTON************************** //
+    // var hsButton = document.createElement("button");
+    // hsButton.textContent = "Submit"
+    // hsButton.addEventListener("click",function(){
+    //     localStorage.setItem("High Score",Name);
+    // })
     container.appendChild(hsButton);
 }
 
