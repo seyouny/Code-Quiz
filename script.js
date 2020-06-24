@@ -1,11 +1,12 @@
 var timeLeft = document.querySelector(".timer");
 var startGame = document.querySelector(".button");
 var correct = document.querySelector(".correct");
-var wrong = document.querySelector(".wrong");
+var wrong = document.querySelector("#Wrong");
 var Question = document.querySelector("#Question");
 var Options = document.querySelector("#Options");
 var clear = document.querySelector("#Clear");
 var container = document.querySelector(".container");
+var form = document.querySelector("#form");
 
 Questions = [
     {
@@ -27,15 +28,15 @@ Questions = [
     }]
 
 
-seconds = 100;
-newseconds = 100;
-var timerLose = 1;
+seconds = 30;
+newseconds = 30;
+
 
 function checkQuestion() {
 
     if (this.value === Questions[questionCount].A){
         if (Questions.length > questionCount){
-            
+            wrong.textContent = '';
             questionCount++;
             console.log(questionCount)
             startGame.style.visibility = "hidden";
@@ -44,7 +45,7 @@ function checkQuestion() {
     }
     else {
         lose = 1;
-        alert("wrong answer!");
+        setTimeout(function(){wrong.textContent = "Incorrect!"},1000);
         }     
 }
 
@@ -56,6 +57,7 @@ function timer() {
     if (seconds === 0) {
         clearInterval(timerInterval);
         alert("Time's up!");
+        highscore();
     }
     
     loseTime();
@@ -63,7 +65,7 @@ function timer() {
     function loseTime(lose){
         if (lose === 1){
             console.log(newseconds)
-            newseconds = seconds-20;
+            newseconds = seconds-3;
             lose = 0;
             return newseconds;
         }
@@ -95,46 +97,26 @@ function buildQuiz(){
     }
 }
 
-// First Name: <input type="text" id="myText" value=""></input>
-// <p id="Input"></p>
-// <button onclick="myFunction()">Try it</button>
-
-// <script>
-// function myFunction() {
-//   var x = document.getElementById("myText").value;
-//   document.getElementById("Input").innerHTML = x;
-
 
 function highscore(){
-    // replaced Question with "high Scores"
     Question.textContent = "High Scores"
-   // "Created button element"
-    var hsButton = document.createElement("button");
-    // Made button say "Submit"
-    hsButton.textContent = "Submit";
-    //this will grab value from input and make into variable x
-    var x = document.getElementById("myText").value;
-    //this makes the x go inside somewhere. let's put it in the Clear Id
-    document.getElementById("Names").innerHTML = x;
-    
-    
+    container.innerHTML = '';
+   form.style.visibility = "visible";
+   
+    // container.innerHTML = '';
+    // Question.textContent = "High Scores"
+    // inputTag.style.visibility = "visible";
+    // var name = inputTag.value;
+    // var submit = document.createElement("button");
+    // submit.setAttribute("type","submit");
+    // submit.textContent = "Submit";
+    // nameInput.appendChild(submit);
+    // submit.addEventListener("click",function(){
+    //     alert("hey!")
 
-    hsButton.addEventListener("click",function(){
-
-        var nameIn = document.getElementById("myText").value;
-        document.getElementById("nameInput").innerHTML = nameIn;
-    })
-    container.appendChild(hsButton);
-
-
-
-// *************************BUTTON************************** //
-    // var hsButton = document.createElement("button");
-    // hsButton.textContent = "Submit"
-    // hsButton.addEventListener("click",function(){
-    //     localStorage.setItem("High Score",Name);
     // })
-    container.appendChild(hsButton);
+
+
 }
 
 startGame.addEventListener("click",function() {

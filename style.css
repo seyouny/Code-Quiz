@@ -17,6 +17,13 @@
     width: 120px;
     visibility: hidden;
 }
+#inputTag{
+    visibility: hidden;
+}
+#form{
+    visibility: hidden;
+    text-align: center;
+}
 #buttonstyle1{
     border-bottom: 4px solid lightcoral;
     border-top: 4px solid lightcoral;
