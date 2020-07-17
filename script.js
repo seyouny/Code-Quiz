@@ -62,7 +62,7 @@ function timer() {
         seconds--;
         newseconds--;
         timeLeft.textContent = "Time Left: " + seconds;
-        if (seconds <= 0) {
+        if (seconds <= 0 || score === 3) {
             clearInterval(timerInterval);
             alert("Time's up!");
             highscore();
@@ -124,6 +124,7 @@ function highscore() {
         Names.append(strings)
         //    Names.append(strings);
         newseconds = 0;
+
     })
 
 
@@ -158,7 +159,7 @@ startGame.addEventListener("click", function () {
     timer();
     startGame.style.visibility = "hidden";
     clear.style.visibility = "hidden";
-    buildQuiz();
+    buildQuiz();    
 
     //questionCount++;
 })
