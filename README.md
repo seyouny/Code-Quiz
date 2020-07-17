@@ -28,7 +28,7 @@ THEN I can save my initials and score
 
 ### Display
 
-<iframe src="https://drive.google.com/file/d/1ggVE0W8N_HGx2Awmiv4mjIinjKUBs1gM/preview" width="640" height="480"></iframe>
+[[embed url= https://drive.google.com/file/d/1ggVE0W8N_HGx2Awmiv4mjIinjKUBs1gM/preview]]
 
 ### Built With
 
