@@ -26,9 +26,9 @@ WHEN the game is over
 THEN I can save my initials and score
 ```
 
-### Display
+### Display Functionality
 
-[[embed url= https://drive.google.com/file/d/1ggVE0W8N_HGx2Awmiv4mjIinjKUBs1gM/preview]]
+https://drive.google.com/file/d/1ggVE0W8N_HGx2Awmiv4mjIinjKUBs1gM/preview
 
 ### Built With
 
