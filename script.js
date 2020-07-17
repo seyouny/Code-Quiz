@@ -49,36 +49,39 @@ function checkQuestion() {
     }
     else {
         lose = 1;
+        loseTime(lose);
         setTimeout(function(){wrong.textContent = "Incorrect!"},1000);
+
         }     
 }
-
 function timer() {
     var timerInterval = setInterval(function(){
-        seconds--;
-        newseconds--;
-        timeLeft.textContent = "Time Left: " + newseconds;
+    seconds--;
+    newseconds--;
+    timeLeft.textContent = "Time Left: " + seconds;
     if (seconds === 0) {
         clearInterval(timerInterval);
         alert("Time's up!");
         highscore();
     }
-    
-    loseTime(lose);
+
+    },1000);
+}
     
     function loseTime(lose){
         if (lose === 1){
+            alert(lose)
             console.log(newseconds)
-            newseconds = seconds-3;
+            seconds = seconds-10;
             lose = 0;
-            return newseconds;
+
+            return seconds;
         }
         else{
-            return newseconds;
+            return seconds;
         }
     }
-    },1000);
-}
+
 
 var questionCount = 0;
 function buildQuiz(){
@@ -111,6 +114,7 @@ function highscore(){
     Names.textContent = strings;
        Names.innerHTML(strings);
     Names.append(strings);
+    newseconds=0;
    })
 //    $("#sub").submit(function(){
 //        console.log($("#name").val());
